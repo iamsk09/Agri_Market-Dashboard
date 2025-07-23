@@ -8,57 +8,59 @@
 Developed a Power BI dashboard to analyze sales and customer activity at a Farmers Market. The dataset included vendors, booths, products, and transactions. This interactive solution provides real-time insights for vendors and organizers to monitor sales, track customer behavior, and optimize product and booth management.
 
 ---
+## 🔍 Approach and Process
 
-## 📌 Dashboard Features & Visuals:
+### 1️⃣ Data Cleaning
+• Cleaned and structured raw CSV files containing customer, vendor, and transaction data  
+• Standardized column names, handled missing values, and removed duplicates  
+• Converted price, quantity, and date fields to appropriate data types  
 
-### 1. Overview KPIs  
-• Total Quantity Sold  
-• Total Sales  
-• Unique & Total Customers  
-• Total Vendors & Booths  
+### 2️⃣ Data Modeling
+• **Fact Table**: Transaction-level sales data  
+• **Dimension Tables**:  
+  - **Customer Table** – contains customer ID, name, and location info  
+  - **Vendor Table** – vendor and booth relationships  
+  - **Product Table** – category and product pricing info  
+• All tables linked via primary-foreign keys like `customer_id`, `vendor_id`, and `product_id`  
 
-### 2. Product Performance  
-• Pie charts highlight top-selling products by revenue and volume  
-• *Insight:* Jalapeno Peppers lead with over ₹3.1K in sales  
+### 3️⃣ DAX Measures
+• `Total_Sales = SUMX(quantity × cost_to_customer_per_qty)`  
+• `Total Quantity = SUM(quantity)`  
+• `Unique Customers = DISTINCTCOUNT(customer_id)`  
+• `Customer_FULL_Name = [customer_first_name] & "_" & [customer_last_name]`  
 
-### 3. Top Customers  
-• Bar charts and tables show leading buyers  
-• *Insight:* Abigail Harris and Betty Bullard rank highest in both value and volume  
-
-### 4. Vendor Insights  
-• Donut charts and tables reveal vendor contributions to sales and quantity  
-
-### 5. Location-Based Analysis  
-• Zip-wise sales and quantity charts  
-• *Insight:* Zip code 22800 dominates sales volume  
-
-### 6. Interactive Filters  
-• Slicers for Product, Customer, Vendor, and Date  
-
-### 7. Creative Additions  
-• Word Cloud visualizes high-value customers for CRM focus  
+### 4️⃣ Power BI Visualizations
+• **Slicers** – Allow filtering by Product, Customer, Vendor, and Date  
+• **KPI Cards** – Display total quantity sold, total sales, unique customers, total booths/vendors  
+• **Pie & Donut Charts** – Top-selling products and vendor contributions  
+• **Bar Charts & Tables** – Top customers by sales and quantity  
+• **Zip Code Analysis** – Sales and quantity distribution by customer location  
+• **Word Cloud** – Visual emphasis on high-value customers based on purchase volume  
 
 ---
 
 ## 📈 Key Insights:
 
-• 3 products account for 90%+ of sales → demand is highly concentrated  
-• 30% of customers drive over 50% of purchases → strong case for loyalty programs  
-• Uneven vendor performance → opportunities for inventory/booth reallocation  
-• Only 29 unique buyers out of 1003 total purchases → repeat buyers dominate, potential for outreach  
+✅ 3 products account for **90%+ of sales** → demand is highly concentrated  
+✅ 30% of customers drive **over 50% of purchases** → strong case for loyalty programs  
+✅ Uneven vendor performance → opportunities for **inventory/booth reallocation**  
+✅ Only 29 unique buyers out of 1003 total purchases → **repeat buyers dominate**, potential for outreach  
 
 ---
+
 ## ⚒️ Tools & Techniques Used:
-• Microsoft Power BI Desktop for modeling, DAX measures, and interactive visuals  
-• Excel (.CSV) for data storage and cleaning  
-• Relationships created between tables using primary/foreign keys (e.g., customer_id, vendor_id)  
-• DAX Measures for Total Sales, Quantity, and KPIs  
+
+✅ Microsoft Power BI Desktop for modeling, DAX measures, and interactive visuals  
+✅ Excel (.CSV) for data storage and cleaning  
+✅ Relationships created between tables using primary/foreign keys (e.g., `customer_id`, `vendor_id`)  
+✅ DAX Measures for Total Sales, Quantity, and KPIs  
 
 ---
 
 ## 💡 Use Case / Practical Application:
-This type of dashboard can be directly used by:  
-• Market organizers to manage booths and track performance  
-• Vendors to see which products and customers are most valuable  
-• Data analysts to derive actionable business strategies based on patterns and metrics
+
+✅ Market organizers to manage booths and track performance  
+✅ Vendors to see which products and customers are most valuable  
+✅ Data analysts to derive actionable business strategies based on patterns and metrics  
+
 
